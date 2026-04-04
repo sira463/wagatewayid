@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHACENTER | unOffcial Whatsapp Gateway Termurah</title>
+    <link rel="icon" href="https://static.whatsapp.net/rsrc.php/v3/yP/r/r_XwXm_z05r.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            /* Warna Latar Belakang Utama WA */
+            --wa-bg-color: #fcf5eb; /* Krem pucat dari body WA */
+            --wa-white: #ffffff; /* Putih bersih */
+            --wa-off-white: #f7f1e3; /* Sedikit lebih gelap dari bg utama */
+
+            /* Warna Aksen Hijau WA */
+            --wa-green-accent: #25d366; /* Hijau cerah dari tombol hero dan footer */
+            --wa-dark-green-accent: #008069; /* Hijau gelap untuk logo dan hover */
+            --wa-light-green-bg: #e1f4e3; /* Hijau pucat untuk background kotak intro fitur */
+
+            /* Warna Teks WA */
+            --wa-text-primary: #111b21; /* Hitam pekat */
+            --wa-text-secondary: #54656f; /* Abu-abu tua */
+            --wa-text-tertiary: #8696a0; /* Abu-abu muda untuk detail */
+            --wa-text-inverted: #ffffff; /* Teks putih di background gelap */
+
+            /* Warna Khusus Bagian Tertentu */
+            --wa-nav-bg: var(--wa-white); /* Nav putih */
+            --wa-hero-bg: #fdfdfd; /* Background hero hampir putih */
+            --wa-feature-odd-bg: #404040; /* Hitam keabu-abuan untuk bagian fitur gelap */
+            --wa-footer-bg: #212121; /* Hitam/abu tua untuk footer */
+            --wa-card-border: #f0f0f0; /* Border kartu terang */
+
+            /* Variabel Warna Whacenter Asli yang Dipertahankan untuk Elemen Tertentu (opsional, jika ingin tetap ada jejak) */
+            /* --whacenter-green: #00bfaf; */ /* Tidak digunakan di tema ini untuk menjaga identitas warna WA */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            color: var(--wa-text-primary);
+            background-color: var(--wa-bg-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigasi */
+        header {
+            background-color: var(--wa-nav-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1396px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-whacenter {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--wa-dark-green-accent); /* Logo menggunakan hijau gelap WA */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--wa-text-primary); /* Teks menu hitam */
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--wa-off-white);
+            color: var(--wa-dark-green-accent);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-menu-link {
+             text-decoration: none;
+             color: var(--wa-text-primary);
+             font-size: 14px;
+             font-weight: 500;
+        }
+
+        .btn-wa {
+            background-color: var(--wa-green-accent); /* Tombol hijau cerah */
+            color: var(--wa-text-inverted); /* Teks tombol putih */
+            padding: 10px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-wa:hover {
+            background-color: var(--wa-dark-green-accent); /* Hover hijau gelap */
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--wa-hero-bg); /* Hampir putih */
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-logo-small {
+            font-size: 32px;
+            color: var(--wa-dark-green-accent);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin: 0 0 20px;
+            color: var(--wa-text-primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--wa-text-secondary);
+            margin: 0 0 40px;
+            line-height: 1.6;
+        }
+
+        .btn-primary-wa {
+            background-color: var(--wa-green-accent); /* Tombol hijau cerah */
+            color: var(--wa-text-inverted); /* Teks tombol putih */
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary-wa:hover {
+            background-color: var(--wa-dark-green-accent); /* Hover hijau gelap */
+        }
+
+        /* Fitur Section */
+        .fitur-section {
+            background-color: var(--wa-bg-color); /* Krem pucat WA */
+            padding: 80px 20px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: var(--wa-text-primary);
+        }
+
+        .fitur-intro-box {
+            background-color: var(--wa-light-green-bg); /* Hijau pucat WA */
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            color: var(--wa-text-secondary);
+        }
+
+        .fitur-intro-box i {
+            font-size: 48px;
+            color: var(--wa-dark-green-accent); /* Ikon hijau gelap */
+        }
+
+        .fitur-main-visual {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+
+        .mockup-card {
+            background: var(--wa-white); /* Kartu putih */
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03); /* Bayangan sangat tipis */
+            border: 1px solid var(--wa-card-border);
+            overflow: hidden;
+            width: 350px;
+            padding: 20px;
+        }
+
+        .mockup-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .feature-item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 600px;
+            color: var(--wa-text-secondary);
+        }
+
+        .feature-item-list li {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .feature-item-list i.fa-check-circle {
+            color: var(--wa-green-accent); /* Ceklis hijau cerah */
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .fitur-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+        }
+
+        .fitur-box-white {
+            background-color: var(--wa-white); /* Kotak putih */
+            border: 1px solid var(--wa-card-border);
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .fitur-box-white:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .fitur-icon-circle {
+            width: 70px;
+            height: 70px;
+            background-color: var(--wa-off-white); /* Krem sedikit lebih gelap untuk bg ikon */
+            color: var(--wa-dark-green-accent); /* Ikon hijau gelap */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .fitur-box-white h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 10px;
+            color: var(--wa-text-primary);
+        }
+
+        .fitur-box-white p {
+            font-size: 14px;
+            color: var(--wa-text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Bagian Fitur Gelap WA (seperti Chat Tersembunyi) */
+        .fitur-section.dark-mode {
+            background-color: var(--wa-feature-odd-bg); /* Hitam keabu-abuan WA */
+            color: var(--wa-text-inverted);
+        }
+
+        .fitur-section.dark-mode .section-title,
+        .fitur-section.dark-mode h4,
+        .fitur-section.dark-mode p,
+        .fitur-section.dark-mode li span {
+            color: var(--wa-text-inverted);
+        }
+
+        .fitur-section.dark-mode .fitur-intro-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--wa-text-inverted);
+        }
+
+        .fitur-section.dark-mode .fitur-box-white {
+            background-color: #4a4a4a;
+            border-color: #5a5a5a;
+        }
+
+        .fitur-section.dark-mode .fitur-icon-circle {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--wa-green-accent);
+        }
+
+
+        /* Integration Section */
+        .integration-section {
+            background-color: var(--wa-off-white); /* Krem sedikit lebih gelap */
+            padding: 80px 20px;
+        }
+
+        .integrasi-intro {
+            text-align: center;
+            color: var(--wa-text-secondary);
+            max-width: 700px;
+            margin: -30px auto 60px;
+            font-size: 16px;
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .integration-card {
+            background: var(--wa-white); /* Putih */
+            border: 1px solid var(--wa-card-border);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.3s;
+        }
+
+        .integration-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--wa-green-accent);
+        }
+
+        .integration-card img {
+            max-width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .integration-card span {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--wa-text-secondary);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background-color: var(--wa-bg-color); /* Krem pucat WA */
+            padding: 80px 20px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--wa-white); /* Kartu putih */
+            border: 1px solid var(--wa-card-border);
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--wa-green-accent); /* Border hijau cerah */
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+
+        .pricing-header h3 {
+            font-size: 24px;
+            margin: 0 0 10px;
+            color: var(--wa-text-primary);
+        }
+
+        .pricing-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--wa-text-primary);
+            margin-bottom: 5px;
+        }
+
+        .pricing-price span {
+            font-size: 16px;
+            font-weight: normal;
+            color: var(--wa-text-secondary);
+        }
+
+        .pricing-period {
+            font-size: 16px;
+            color: var(--wa-text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .pricing-period .wa-period-tag {
+             color: var(--wa-dark-green-accent);
+             font-weight: 600;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+            color: var(--wa-text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .pricing-features i.fa-check-circle {
+            color: var(--wa-green-accent); /* Ceklis hijau cerah */
+        }
+
+        .btn-pricing {
+            display: block;
+            text-align: center;
+            padding: 12px 0;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-pricing-secondary {
+            background-color: var(--wa-text-secondary); /* Abu-abu tombol sekunder */
+            color: var(--wa-text-inverted);
+        }
+
+        .btn-pricing-secondary:hover {
+            background-color: #3e4a50;
+        }
+
+        .pricing-card.featured .btn-pricing-secondary {
+            background-color: var(--wa-green-accent); /* Hijau cerah tombol utama */
+        }
+
+        .pricing-card.featured .btn-pricing-secondary:hover {
+            background-color: var(--wa-dark-green-accent);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--wa-off-white); /* Krem sedikit lebih gelap */
+            padding: 80px 20px;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-intro-text {
+            text-align: center;
+            color: var(--wa-text-secondary);
+            margin: -30px auto 60px;
+            max-width: 600px;
+            font-size: 15px;
+        }
+
+        .faq-accordion {
+            background: var(--wa-white); /* Putih */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid var(--wa-card-border);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--wa-card-border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--wa-text-primary);
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            color: var(--wa-green-accent); /* Ikon panah hijau cerah */
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--wa-text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--wa-footer-bg); /* Hitam keabu-abuan WA */
+            color: var(--wa-text-tertiary);
+            padding: 60px 20px;
+        }
+
+        .footer-container {
+            max-width: 1396px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h5 {
+            color: var(--wa-green-accent); /* Judul kolom hijau cerah */
+            margin: 0 0 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--wa-text-tertiary);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--wa-green-accent);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            max-width: 1396px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 12px;
+            color: var(--wa-text-tertiary);
+        }
+
+        .footer-bottom a {
+             color: var(--wa-text-tertiary);
+             text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+             text-decoration: underline;
+        }
+
+        /* Tombol WA Mengambang */
+        .wa-float-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: var(--wa-green-accent); /* Hijau cerah */
+            color: var(--wa-text-inverted);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .wa-float-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--wa-dark-green-accent);
+        }
+
+        /* Back to top btn */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--wa-dark-green-accent); /* Hijau gelap */
+            color: var(--wa-text-inverted);
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            z-index: 999;
+            text-decoration: none;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s, background-color 0.3s;
+        }
+
+        .back-to-top.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+             background-color: var(--wa-green-accent);
+        }
+
+        /* Section Fitur dengan Nomor */
+.fitur-nomor-section {
+    background-color: #f9f9f9; /* Warna background sedikit berbeda agar ada pemisah */
+    padding: 80px 0;
+}
+
+.grid-nomor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.item-nomor {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.item-nomor:hover {
+    transform: translateY(-5px);
+}
+
+/* Angka Fitur dengan Warna Berbeda */
+.angka-fitur {
+    font-size: 40px;
+    font-weight: 800;
+    color: #e9edef; /* Warna default abu terang */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: color 0.3s;
+}
+
+.item-nomor:hover .angka-fitur {
+    color: var(--wa-green-accent); /* Berubah jadi hijau saat hover */
+}
+
+.item-nomor h4 {
+    margin-bottom: 10px;
+    color: var(--wa-dark-green-accent);
+}
+
+.item-nomor p {
+    font-size: 14px;
+    color: #666;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-whacenter">
+                <span>WHACENTER</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#integration">Integration</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#docs">Docs</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="nav-menu-link">Contact Us</a>
+                <a href="#login" class="nav-menu-link">LOGIN</a>
+            </div>
+        </div>
+    </header>
+
+<section class="hero" id="home" style="
+    background-color: #fcf5eb; /* Warna Krem Pucat Background WA Resmi */
+    padding: 80px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+">
+    <div class="hero-container" style="
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    ">
+        
+        <div class="hero-text-col" style="
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        ">
+            <h1 style="
+                font-size: 72px;
+                font-weight: 700;
+                line-height: 1.1;
+                color: #111b21;
+                margin: 0 0 25px 0;
+                letter-spacing: -2px;
+            ">
+                Auto<br>Reply.
+            </h1>
+            
+            <p style="
+                font-size: 18px;
+                color: #54656f;
+                margin: 0 0 40px 0;
+                line-height: 1.6;
+                max-width: 450px;
+            ">
+                unOfficial Whatsapp API Gateway paling terjangkau. Solusi andalan untuk otomasi pesan bisnis Anda secara efisien.
+            </p>
+            
+            <a href="#pricing" class="btn-primary-wa" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background-color: #25d366;
+                color: white;
+                padding: 16px 36px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+            " onmouseover="this.style.backgroundColor='#1da851'" onmouseout="this.style.backgroundColor='#25d366'">
+                Ayo Mulai <i class="fas fa-arrow-right" style="font-size: 14px;"></i>
+            </a>
+        </div>
+
+        <div class="hero-visual-col" style="
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        ">
+            <div style="
+                width: 100%;
+                max-width: 450px;
+                height: 500px;
+                background-image: url('https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=600&q=80');
+                background-size: cover;
+                background-position: center;
+                border-radius: 24px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                overflow: hidden;
+                border: 1px solid rgba(0,0,0,0.05);
+            ">
+            </div>
+
+            <div style="
+                position: absolute;
+                bottom: 50px;
+                right: -20px;
+                background-color: #d9fdd3;
+                color: #111b21;
+                padding: 12px 18px;
+                border-radius: 18px 18px 0px 18px;
+                font-size: 14px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                max-width: 250px;
+                line-height: 1.4;
+                z-index: 2;
+            ">
+                Kapan servernya aktif? ⚡️
+                <div style="text-align: right; font-size: 11px; color: #8696a0; margin-top: 4px;">
+                    11:55 <i class="fas fa-check-double" style="color: #53bdeb;"></i>
+                </div>
+            </div>
+
+            <div style="
+                position: absolute;
+                top: 80px;
+                left: -20px;
+                background-color: #ffffff;
+                color: #111b21;
+                padding: 12px 18px;
+                border-radius: 18px 18px 18px 0px;
+                font-size: 14px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                max-width: 250px;
+                line-height: 1.4;
+                z-index: 2;
+            ">
+                Halo! Tim Whacenter siap membantu otomasi pesan Anda 🚀
+                <div style="text-align: right; font-size: 11px; color: #8696a0; margin-top: 4px;">11:54</div>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+    <section class="fitur-section" id="about">
+        <div class="section-container">
+            <h2 class="section-title">Apa itu Whacenter?</h2>
+            <div class="fitur-intro-box">
+                <i class="fas fa-info-circle"></i>
+                <p>Whacenter adalah Whacenter adalah whatsapp API gateway.tool Whatsapp yang powerful untuk kebutuhan Anda! Kelebihan Whacenter yang tidak dimiliki oleh aplikasi lain</p>
+            </div>
+            
+            
+
+            <ul class="feature-item-list">
+                <li><i class="fas fa-check-circle"></i><span><strong>Whatsapp API Gateway.</strong> Hubungkan sistem Anda langsung ke Whatsapp.</span></li>
+                <li><i class="fas fa-check-circle"></i><span><strong>Auto Reply.</strong> Respon pesan otomatis cerdas.</span></li>
+                <li><i class="fas fa-check-circle"></i><span><strong>WA Message Management.</strong> Kelola percakapan dengan mudah.</span></li>
+            </ul>
+        </div>
+    </section>
+<section class="fitur-nomor-section">
+    <div class="section-container">
+        <h2 class="section-title">Fitur Whacenter</h2>
+        <p class="integrasi-intro">Untuk Script / code (baik google script atau pun yang lain di luar kewenangan whacenter, whacenter hanya membantu memudahkan untuk generator script, whacenter adalah layanan whatsapp API gateway bukan layanan pembuatan script secara gratis, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan whacenter)</p>
+        <div class="grid-nomor">
+            <div class="item-nomor">
+                <div class="angka-fitur">01</div>
+                <h4>Berbasis Cloud / Web</h4>
+                <p>Tidak perlu install aplikasi, bisa dibuka di laptop, andorid, iphone. Bisa digunakan kapan saja dan dimana saja. </p>
+            </div>
+
+            <div class="item-nomor">
+                <div class="angka-fitur">02</div>
+                <h4>Contact Management</h4>
+                <p>memudahkan mengatur data nomor whatsaap pelanggan dan mengelompokkan ke dalam group. Tersedia fitur import kontak dari miscosoft excel.</p>
+            </div>
+
+            <div class="item-nomor">
+                <div class="angka-fitur">03</div>
+                <h4>Broadcast</h4>
+                <p>Broadcast pesan ke kontak database Anda dengan langkah mudah berdasarkan group yang telah anda buat.</p>
+            </div>
+            <div class="item-nomor">
+                <div class="angka-fitur">04</div>
+                <h4>Pesan Terjadwal</h4>
+                <p>Anda dapat menjadwalkan pesan yang akan dikirimkan kepada pelanggan.</p>
+            </div>
+
+            <div class="item-nomor">
+                <div class="angka-fitur">05</div>
+                <h4>Terintegrasi Google Form</h4>
+                <p>Whacenter terintegrasi dengan Google Froms dengan menggunakan appscript, Untuk Script / code (baik google script atau pun yang lain di luar kewenangan whacenter, whacenter adalah layanan whatsapp API gateway, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan whacenter)</p>
+            </div>
+
+            <div class="item-nomor">
+                <div class="angka-fitur">06</div>
+                <h4>Simple Grab Contact</h4>
+                <p>Dengan fitur ini, Anda bisa dengan mudah grab contact yang ada di whatsapp ataupun grup whatsapp melalui whacenter.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="integration-section" id="integration">
+        <div class="section-container">
+            <h2 class="section-title">Integration</h2>
+            <p class="integrasi-intro">Integrasi menggunakan plugin uncanny automator.</p>
+            
+            <div class="integration-grid">
+    <div class="integration-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyFojgxT1ZKWLJhcYJx223JrFC9qHknCWdCQ&s" alt="CF7 Logo">
+        <span>Contact Form 7</span>
+    </div>
+    <div class="integration-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLM2IJH1lFgK9dizq61ei9zacs_2Np4wFPg&s" alt="Woo Logo">
+        <span>WooCommerce</span>
+    </div>
+    <div class="integration-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScqUlAc3NIAdwqNZYH7s1Y930LQnfz_vLd0Q&s" alt="Google Forms Logo">
+        <span>Google Form</span>
+    </div>
+    <div class="integration-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1200px-Google_Sheets_logo_%282014-2020%29.svg.png" alt="Google Sheets Logo">
+        <span>Google Sheet</span>
+    </div>
+    <div class="integration-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRjPnQ7kFI6v0XiQcspjl3zOslEPHxhUPz8w&s" alt="Jotform Logo">
+        <span>Jotform</span>
+    </div>
+    <div class="integration-card">
+        <img src="https://www.pabbly.com/wp-content/uploads/2021/03/Connect-Logo.svg" alt="Pabbly Connect Logo">
+        <span>Pabbly Connect</span>
+    </div>
+    <div class="integration-card">
+        <i class="fas fa-code" style="font-size:60px; color:var(--wa-dark-green-accent);"></i>
+        <span>HTML, PHP, MySQL</span>
+    </div>
+     <div class="integration-card">
+        <img src="data:image/png;base64,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" alt="CF7 Logo">
+        <span>Fluent Form</span>
+    </div>
+     <div class="integration-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ77JYm6BJ_Ft2ze-Yharg6BzJIOSKjcuOMLw&s" alt="CF7 Logo">
+        <span>WAFU</span>
+    </div>
+     <div class="integration-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI921FGt6bqQVktvh0_X3vWV7zW5wfGDjQLA&s" alt="CF7 Logo">
+        <span>Tally.so</span>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <section class="fitur-section dark-mode" id="features">
+        <div class="section-container">
+            <h2 class="section-title">More Feature</h2>
+            <p style="text-align:center; color:var(--wa-text-inverted); margin:-30px auto 60px; max-width:600px;">Whacenter adalah tool berbasis web untuk Anda sebagai pebisnis online yang dapat membantu penjualan di bisnis Anda jadi jauh lebih efektif & efisien</p>
+            
+            <div class="fitur-grid">
+                <div class="fitur-box-white">
+                    <div class="fitur-icon-circle"><i class="fas fa-volume-up"></i></div>
+                    <h4>WA Broadcast</h4>
+                    <p>Fitur ini digunakan untuk mengirimkan Pesan WhatsApp secara massal dengan sangat mudah.</p>
+                </div>
+                <div class="fitur-box-white">
+                    <div class="fitur-icon-circle"><i class="fas fa-reply-all"></i></div>
+                    <h4>Smart AutoReply</h4>
+                    <p>Fitur ini digunakan untuk membalas pesan secara otomatis dengan keyword tertentu.</p>
+                </div>
+                <div class="fitur-box-white">
+                    <div class="fitur-icon-circle"><i class="fas fa-address-book"></i></div>
+                    <h4>Contact</h4>
+                    <p>Fitur ini digunakan untuk manajemen kontak bisa input satu - satu ataupun import via excel.</p>
+                </div>
+                <div class="fitur-box-white">
+                    <div class="fitur-icon-circle"><i class="fas fa-users-cog"></i></div>
+                    <h4>Management User</h4>
+                    <p>Fitur ini untuk management user. Management user pun di bagi 2 klasifikasi untuk end user dan agency.</p>
+                </div>
+                <div class="fitur-box-white">
+                    <div class="fitur-icon-circle"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>Device</h4>
+                    <p>Fitur ini digunakan untuk mengelola device atau nomor dan sangat memungkinkan 1 akun bisa lebih dari 1 nomor whatsapp.</p>
+                </div>
+                <div class="fitur-box-white">
+                    <div class="fitur-icon-circle"><i class="fas fa-file-export"></i></div>
+                    <h4>Send Item Report</h4>
+                    <p>Fitur ini digunakan untuk memantau send item report seluruh pesan yang masuk dan keluar, gagal dan terkirim.</p>
+                </div>
+                <div class="fitur-box-white">
+    <div class="fitur-icon-circle"><i class="fas fa-laptop-code"></i></div>
+    <h4>Multi Platform</h4>
+    <p>Whacenter bisa di gunakan untuk beberapa os karena di bangun menggunakan web based.</p>
+</div>
+
+<div class="fitur-box-white">
+    <div class="fitur-icon-circle"><i class="fas fa-inbox"></i></div>
+    <h4>Inbox</h4>
+    <p>Fitur ini digunakan untuk managemen inbox, sehingga tiap pesan yang masuk di whatsapp kita bisa di remote dari aplikasi ini.</p>
+</div>
+
+<div class="fitur-box-white">
+    <div class="fitur-icon-circle"><i class="fas fa-user-friends"></i></div>
+    <h4>Single & Group Message</h4>
+    <p>Fitur ini digunakan untuk mengirimkan single message atau grup message bisa tanpa save kontak atau dari list kontak yang kita punya.</p>
+</div>
+
+<div class="fitur-box-white">
+    <div class="fitur-icon-circle"><i class="fas fa-terminal"></i></div>
+    <h4>Simple REST API</h4>
+    <p>Kami sudah sediakan untuk dokumentasi rest api guna untuk pengiriman pesan atau untuk di intgrasikan dengan aplikasi yang kita buat.</p>
+</div>
+
+<div class="fitur-box-white">
+    <div class="fitur-icon-circle"><i class="fas fa-file-alt"></i></div>
+    <h4>Terintegrasi Google Form</h4>
+    <p>Whacenter sudah terintegrasi dengan Google Froms sehingga Anda bisa dengan mudah dalam mengumpulkan list building atau mengirimkan informasi melalui WhatsApp.</p>
+</div>
+
+<div class="fitur-box-white">
+    <div class="fitur-icon-circle"><i class="fas fa-address-card"></i></div>
+    <h4>Simple Grab Contact</h4>
+    <p>Kami sudah sediakan untuk dokumentasi rest api guna untuk pengiriman pesan atau untuk di intgrasikan dengan aplikasi yang kita buat.</p>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="section-container">
+            <h2 class="section-title">Harga Per 6 Bulan</h2>
+            <p style="text-align:center; color:var(--wa-text-secondary); margin:-30px auto 60px; max-width:600px;">Investasi terbaik untuk Anda yang ingin meningkatkan produktifitas usaha Anda!</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Lite</h3>
+                        <div class="pricing-price"><span>IDR</span> 250 rb <span>/ 6 bln</span></div>
+                        <p class="pricing-period">Per <span class="wa-period-tag">6 bulan</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Message</li>
+                        <li><i class="fas fa-check-circle"></i> Text, Image, File, Document</li>
+                        <li><i class="fas fa-check-circle"></i> Send to Whatsapp Group</li>
+                        <li><i class="fas fa-check-circle"></i> Auto Reply</li>
+                        <li><i class="fas fa-check-circle"></i> Webhook</li>
+                        <li><i class="fas fa-check-circle"></i> API Access</li>
+                        <li><i class="fas fa-check-circle"></i> Masa Aktif 6 Bulan</li>
+                        <li><i class="fas fa-check-circle"></i> 2 Whatsapp Number</li>
+                    </ul>
+                    <a href="#order" class="btn-pricing btn-pricing-secondary">Beli Sekarang</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Business</h3>
+                        <div class="pricing-price"><span>IDR</span> 360 rb <span>/ 6 bln</span></div>
+                        <p class="pricing-period">Per <span class="wa-period-tag">6 bulan</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Message</li>
+                        <li><i class="fas fa-check-circle"></i> Text, Image, File, Document</li>
+                        <li><i class="fas fa-check-circle"></i> Send to Whatsapp Group</li>
+                        <li><i class="fas fa-check-circle"></i> Auto Reply</li>
+                        <li><i class="fas fa-check-circle"></i> Webhook</li>
+                        <li><i class="fas fa-check-circle"></i> API Access</li>
+                        <li><i class="fas fa-check-circle"></i> Masa Aktif 6 Bulan</li>
+                        <li><i class="fas fa-check-circle"></i> 5 Whatsapp Number</li>
+                    </ul>
+                    <a href="#order" class="btn-pricing btn-pricing-secondary">Beli Sekarang</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="pricing-price"><span>IDR</span> 600 rb <span>/ 6 bln</span></div>
+                        <p class="pricing-period">Per <span class="wa-period-tag">6 bulan</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Message</li>
+                        <li><i class="fas fa-check-circle"></i> Text, Image, File, Document</li>
+                        <li><i class="fas fa-check-circle"></i> Send to Whatsapp Group</li>
+                        <li><i class="fas fa-check-circle"></i> Auto Reply</li>
+                        <li><i class="fas fa-check-circle"></i> Webhook</li>
+                        <li><i class="fas fa-check-circle"></i> API Access</li>
+                        <li><i class="fas fa-check-circle"></i> Masa Aktif 6 Bulan</li>
+                        <li><i class="fas fa-check-circle"></i> 10 Whatsapp Number</li>
+                    </ul>
+                    <a href="#order" class="btn-pricing btn-pricing-secondary">Beli Sekarang</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+        <section class="pricing-section" id="pricing">
+        <div class="section-container">
+            <h2 class="section-title">1 Tahun</h2>
+            <p style="text-align:center; color:var(--wa-text-secondary); margin:-30px auto 60px; max-width:600px;">Investasi terbaik untuk Anda yang ingin meningkatkan produktifitas usaha Anda!</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Lite</h3>
+                        <div class="pricing-price"><span>IDR</span> 480 rb <span>/ 1 tahun</span></div>
+                        <p class="pricing-period">Per <span class="wa-period-tag">1 tahun/span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Message</li>
+                        <li><i class="fas fa-check-circle"></i> Text, Image, File, Document</li>
+                        <li><i class="fas fa-check-circle"></i> Send to Whatsapp Group</li>
+                        <li><i class="fas fa-check-circle"></i> Auto Reply</li>
+                        <li><i class="fas fa-check-circle"></i> Webhook</li>
+                        <li><i class="fas fa-check-circle"></i> API Access</li>
+                        <li><i class="fas fa-check-circle"></i> Masa Aktif 1 tahun</li>
+                        <li><i class="fas fa-check-circle"></i> 2 Whatsapp Number</li>
+                    </ul>
+                    <a href="#order" class="btn-pricing btn-pricing-secondary">Beli Sekarang</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Business</h3>
+                        <div class="pricing-price"><span>IDR</span> 600 rb <span>/ 1 tahun</span></div>
+                        <p class="pricing-period">Per <span class="wa-period-tag">1 tahun</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Message</li>
+                        <li><i class="fas fa-check-circle"></i> Text, Image, File, Document</li>
+                        <li><i class="fas fa-check-circle"></i> Send to Whatsapp Group</li>
+                        <li><i class="fas fa-check-circle"></i> Auto Reply</li>
+                        <li><i class="fas fa-check-circle"></i> Webhook</li>
+                        <li><i class="fas fa-check-circle"></i> API Access</li>
+                        <li><i class="fas fa-check-circle"></i> Masa Aktif 1 tahun</li>
+                        <li><i class="fas fa-check-circle"></i> 5 Whatsapp Number</li>
+                    </ul>
+                    <a href="#order" class="btn-pricing btn-pricing-secondary">Beli Sekarang</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="pricing-price"><span>IDR</span> 1 juta <span>/ 1 tahun</span></div>
+                        <p class="pricing-period">Per <span class="wa-period-tag">1 tahun</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Message</li>
+                        <li><i class="fas fa-check-circle"></i> Text, Image, File, Document</li>
+                        <li><i class="fas fa-check-circle"></i> Send to Whatsapp Group</li>
+                        <li><i class="fas fa-check-circle"></i> Auto Reply</li>
+                        <li><i class="fas fa-check-circle"></i> Webhook</li>
+                        <li><i class="fas fa-check-circle"></i> API Access</li>
+                        <li><i class="fas fa-check-circle"></i> Masa Aktif 1 tahun</li>
+                        <li><i class="fas fa-check-circle"></i> 10 Whatsapp Number</li>
+                    </ul>
+                    <a href="#order" class="btn-pricing btn-pricing-secondary">Beli Sekarang</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="faq-section" id="docs">
+        <div class="faq-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="faq-intro-text">PERTANYAAN YANG PALING SERING DITANYAKAN</p>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">Apakah ada Batasan Jumlah Pengiriman Pesan Maksimal? <i class="fas fa-angle-down faq-icon"></i></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Jawaban terperinci untuk pertanyaan ini akan ditampilkan di sini. Secara umum, layanan kami menawarkan pengiriman pesan tanpa batas, namun tetap tunduk pada kebijakan pencegahan spam Whatsapp.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apa yang Harus Saya Perhatikan Baik-Baik? <i class="fas fa-angle-down faq-icon"></i></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Pastikan untuk selalu mematuhi Ketentuan Layanan Whatsapp untuk menghindari pemblokiran nomor. Hindari mengirim pesan massal (spam) ke nomor yang tidak mengharapkan pesan dari Anda.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah Bisa Kirim Pesan Audio, Video Atau Dokumen? <i class="fas fa-angle-down faq-icon"></i></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Ya, Whacenter mendukung pengiriman berbagai media termasuk teks, gambar, file, audio, video, dan dokumen sesuai dengan paket yang Anda pilih.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Kalau Ambil Paket 6 Bulan / 1 Tahun Kuota Device Boleh Dijual ? <i class="fas fa-angle-down faq-icon"></i></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Ya, untuk paket tertentu (terutama Agency), Anda diperbolehkan untuk memanage atau menjual kembali kuota device tersebut kepada klien Anda.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah Bisa Refund ? <i class="fas fa-angle-down faq-icon"></i></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Silakan cek kebijakan pengembalian dana kami secara detail di halaman Syarat & Ketentuan. Umumnya, kami tidak menawarkan refund untuk layanan langganan yang sudah aktif.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Bagaimana terkait script / appscript / atau code lainya ? <i class="fas fa-angle-down faq-icon"></i></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Seperti disebutkan di bagian Integrasi, Whacenter menyediakan API gateway. Pengembangan script/kode khusus adalah di luar cakupan layanan standar, namun tim kami dapat membantu dengan biaya tambahan.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah Bisa kena banned ? <i class="fas fa-angle-down faq-icon"></i></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Pemblokiran nomor (banned) adalah risiko yang melekat jika kebijakan anti-spam Whatsapp dilanggar. Whacenter membantu menyediakan API, namun cara penggunaan nomor tetap menjadi tanggung jawab pengguna. Kami menyediakan tips untuk meminimalkan risiko ini.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h5>Layanan</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Gateway</a></li>
+                    <li><a href="#">Pesan</a></li>
+                    <li><a href="#">Broadcast</a></li>
+                    <li><a href="#">Untuk Bisnis</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Perusahaan</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Karier</a></li>
+                    <li><a href="#">Brand Center</a></li>
+                    <li><a href="#">Privasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Platform</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Android</a></li>
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Web/PC</a></li>
+                    <li><a href="#">WhatsApp API</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Bantuan</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Keamanan</a></li>
+                    <li><a href="#">Status</a></li>
+                    <li><a href="#">Keamanan Dokumen</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright Whacenter. All Rights Reserved. Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>. Disesuaikan dengan Tema Warna WhatsApp.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="wa-float-btn"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-angle-up"></i></a>
+
+    <script>
+        // JS untuk FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Tutup semua item FAQ lainnya
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle item yang diklik
+                item.classList.toggle('active');
+            });
+        });
+
+        // JS untuk Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html> ini kode awal
