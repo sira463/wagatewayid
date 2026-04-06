@@ -956,21 +956,127 @@
             </ul>
         </div>
     </section>
-<section class="fitur-nomor-section">
+<section class="wa-redesign-section">
+    <style>
+        /* Container Utama */
+        .wa-redesign-section {
+            background-color: #FCF5EB; /* Warna krem khas WA */
+            color: #111B21;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding: 100px 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Header */
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        .integrasi-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 80px auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #3b4a54;
+            opacity: 0.9;
+        }
+
+        /* Grid System: 3 Kolom */
+        .grid-nomor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 card di atas, 3 di bawah */
+            gap: 30px;
+        }
+
+        /* Card Style */
+        .item-nomor {
+            background: #ffffff;
+            padding: 45px 35px;
+            border-radius: 40px; /* Sudut membulat lebar khas WA */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .item-nomor:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Penomoran Fitur */
+        .angka-fitur {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #25D366; /* Hijau WhatsApp */
+            background: #e7f8ed;
+            width: fit-content;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .item-nomor h4 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #111B21;
+        }
+
+        .item-nomor p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #4a5d68;
+            margin: 0;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 992px) {
+            .grid-nomor {
+                grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+            }
+            .section-title { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 600px) {
+            .grid-nomor {
+                grid-template-columns: 1fr; /* 1 kolom di HP */
+            }
+            .section-title { font-size: 2.2rem; }
+            .wa-redesign-section { padding: 60px 20px; }
+        }
+    </style>
+
     <div class="section-container">
         <h2 class="section-title">Fitur WaGateway.id</h2>
-        <p class="integrasi-intro">Untuk Script / code (baik google script atau pun yang lain di luar kewenangan WaGateway.id, WaGateway.id hanya membantu memudahkan untuk generator script, WaGateway.id adalah layanan whatsapp API gateway bukan layanan pembuatan script secara gratis, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan WaGateway.id)</p>
+        <p class="integrasi-intro">
+            Untuk Script / code (baik google script atau pun yang lain di luar kewenangan WaGateway.id, WaGateway.id hanya membantu memudahkan untuk generator script, WaGateway.id adalah layanan whatsapp API gateway bukan layanan pembuatan script secara gratis, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan WaGateway.id)
+        </p>
+
         <div class="grid-nomor">
             <div class="item-nomor">
                 <div class="angka-fitur">01</div>
                 <h4>Berbasis Cloud / Web</h4>
-                <p>Tidak perlu install aplikasi, bisa dibuka di laptop, andorid, iphone. Bisa digunakan kapan saja dan dimana saja. </p>
+                <p>Tidak perlu install aplikasi, bisa dibuka di laptop, Android, maupun iPhone. Bisa digunakan kapan saja dan dimana saja.</p>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">02</div>
                 <h4>Contact Management</h4>
-                <p>memudahkan mengatur data nomor whatsaap pelanggan dan mengelompokkan ke dalam group. Tersedia fitur import kontak dari miscosoft excel.</p>
+                <p>Memudahkan mengatur data nomor WhatsApp pelanggan dan mengelompokkan ke dalam grup. Tersedia fitur import kontak dari Microsoft Excel.</p>
             </div>
 
             <div class="item-nomor">
@@ -978,22 +1084,23 @@
                 <h4>Broadcast</h4>
                 <p>Broadcast pesan ke kontak database Anda dengan langkah mudah berdasarkan group yang telah anda buat.</p>
             </div>
+
             <div class="item-nomor">
                 <div class="angka-fitur">04</div>
                 <h4>Pesan Terjadwal</h4>
-                <p>Anda dapat menjadwalkan pesan yang akan dikirimkan kepada pelanggan.</p>
+                <p>Anda dapat menjadwalkan pesan yang akan dikirimkan kepada pelanggan secara otomatis sesuai waktu yang ditentukan.</p>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">05</div>
                 <h4>Terintegrasi Google Form</h4>
-                <p>Whacenter terintegrasi dengan Google Froms dengan menggunakan appscript, Untuk Script / code (baik google script atau pun yang lain di luar kewenangan whacenter, whacenter adalah layanan whatsapp API gateway, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan whacenter)</p>
+                <p>terintegrasi dengan Google Froms dengan menggunakan appscript, Untuk Script / code (baik google script atau pun yang lain di luar kewenangan WaGateway.id, WaGateway.id adalah layanan whatsapp API gateway, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan WaGateway.id)</p>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">06</div>
                 <h4>Simple Grab Contact</h4>
-                <p>Dengan fitur ini, Anda bisa dengan mudah grab contact yang ada di whatsapp ataupun grup whatsapp melalui whacenter.</p>
+                <p>Dengan fitur ini, Anda bisa dengan mudah mengambil (grab) kontak yang ada di WhatsApp pribadi maupun grup melalui WaGateway.id.</p>
             </div>
         </div>
     </div>
@@ -1342,7 +1449,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© Copyright WaGateway.id. All Rights Reserved. Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a></p>
+            <p>© Copyright WaGateway.id. All Rights Reserved. Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>. Disesuaikan dengan Tema Warna WhatsApp.</p>
         </div>
     </footer>
 
@@ -1382,4 +1489,4 @@
         });
     </script>
 </body>
-</html>
+</html> ini kode awal
