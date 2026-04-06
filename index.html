@@ -958,152 +958,194 @@
     </section>
 <section class="wa-redesign-section">
     <style>
-        /* Container Utama */
+        /* Container Utama & Background Dots Dekoratif */
         .wa-redesign-section {
-            background-color: #FCF5EB; /* Warna krem khas WA */
+            background-color: #FCF5EB;
+            background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+            background-size: 40px 40px; /* Efek titik-titik halus ala desain tech */
             color: #111B21;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            padding: 100px 24px;
+            padding: 120px 24px;
             display: flex;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elemen Lingkaran Dekoratif ala Gambar WA */
+        .wa-redesign-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: #25D366;
+            filter: blur(150px);
+            opacity: 0.1;
+            border-radius: 50%;
         }
 
         .section-container {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
 
         /* Header */
         .section-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 20px;
-            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            line-height: 1.1;
         }
 
         .integrasi-intro {
             text-align: center;
-            max-width: 850px;
-            margin: 0 auto 80px auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 100px auto;
+            font-size: 1.15rem;
+            line-height: 1.7;
             color: #3b4a54;
-            opacity: 0.9;
         }
 
         /* Grid System: 3 Kolom */
         .grid-nomor {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 card di atas, 3 di bawah */
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
         }
 
-        /* Card Style */
+        /* Card Style dengan Mockup Visual Kecil */
         .item-nomor {
             background: #ffffff;
-            padding: 45px 35px;
-            border-radius: 40px; /* Sudut membulat lebar khas WA */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 50px 40px;
+            border-radius: 45px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
         }
 
         .item-nomor:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            transform: scale(1.03);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
         }
 
-        /* Penomoran Fitur */
+        /* Penomoran Fitur yang Lebih Modern */
         .angka-fitur {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 800;
-            color: #25D366; /* Hijau WhatsApp */
-            background: #e7f8ed;
-            width: fit-content;
-            padding: 6px 16px;
-            border-radius: 100px;
-            margin-bottom: 24px;
-            text-transform: uppercase;
+            color: #25D366;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .angka-fitur::after {
+            content: "";
+            height: 2px;
+            width: 30px;
+            background: #25D366;
+            border-radius: 2px;
         }
 
         .item-nomor h4 {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             color: #111B21;
+            line-height: 1.2;
         }
 
         .item-nomor p {
             font-size: 1.05rem;
             line-height: 1.6;
-            color: #4a5d68;
-            margin: 0;
+            color: #54656f;
+            margin-bottom: 20px;
         }
 
-        /* Responsif untuk HP */
-        @media (max-width: 992px) {
-            .grid-nomor {
-                grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
-            }
-            .section-title { font-size: 2.8rem; }
+        /* Ikon Dekoratif di pojok bawah card */
+        .card-icon {
+            margin-top: auto;
+            width: 45px;
+            height: 45px;
+            background: #f0f2f5;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #25D366;
         }
 
-        @media (max-width: 600px) {
-            .grid-nomor {
-                grid-template-columns: 1fr; /* 1 kolom di HP */
-            }
-            .section-title { font-size: 2.2rem; }
-            .wa-redesign-section { padding: 60px 20px; }
+        /* Responsif */
+        @media (max-width: 1024px) {
+            .grid-nomor { grid-template-columns: repeat(2, 1fr); }
+            .section-title { font-size: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .grid-nomor { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.5rem; }
+            .wa-redesign-section { padding: 80px 20px; }
         }
     </style>
 
     <div class="section-container">
         <h2 class="section-title">Fitur WaGateway.id</h2>
         <p class="integrasi-intro">
-            Untuk Script / code (baik google script atau pun yang lain di luar kewenangan WaGateway.id, WaGateway.id hanya membantu memudahkan untuk generator script, WaGateway.id adalah layanan whatsapp API gateway bukan layanan pembuatan script secara gratis, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan WaGateway.id)
+            Untuk Script / code (baik google script atau pun yang lain di luar kewenangan kami, kami hanya membantu memudahkan untuk generator script, whacenter adalah layanan whatsapp API gateway bukan layanan pembuatan script secara gratis, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan )
         </p>
 
         <div class="grid-nomor">
             <div class="item-nomor">
                 <div class="angka-fitur">01</div>
                 <h4>Berbasis Cloud / Web</h4>
-                <p>Tidak perlu install aplikasi, bisa dibuka di laptop, Android, maupun iPhone. Bisa digunakan kapan saja dan dimana saja.</p>
+                <p>Tanpa instalasi hardware. Akses dashboard Anda dari perangkat apa pun, kapan saja, melalui peramban web standar.</p>
+                <div class="card-icon">☁️</div>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">02</div>
                 <h4>Contact Management</h4>
-                <p>Memudahkan mengatur data nomor WhatsApp pelanggan dan mengelompokkan ke dalam grup. Tersedia fitur import kontak dari Microsoft Excel.</p>
+                <p>Kelola ribuan database pelanggan dengan sistem label dan grup yang rapi. Mendukung integrasi Excel secara penuh.</p>
+                <div class="card-icon">👥</div>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">03</div>
                 <h4>Broadcast</h4>
-                <p>Broadcast pesan ke kontak database Anda dengan langkah mudah berdasarkan group yang telah anda buat.</p>
+                <p>Kirim pesan massal ke ribuan kontak sekaligus dengan sistem antrean yang cerdas untuk menjaga keamanan akun Anda.</p>
+                <div class="card-icon">📣</div>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">04</div>
                 <h4>Pesan Terjadwal</h4>
-                <p>Anda dapat menjadwalkan pesan yang akan dikirimkan kepada pelanggan secara otomatis sesuai waktu yang ditentukan.</p>
+                <p>Otomatisasi kampanye pemasaran Anda. Tentukan waktu pengiriman dan biarkan sistem bekerja saat Anda beristirahat.</p>
+                <div class="card-icon">⏰</div>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">05</div>
                 <h4>Terintegrasi Google Form</h4>
-                <p>terintegrasi dengan Google Froms dengan menggunakan appscript, Untuk Script / code (baik google script atau pun yang lain di luar kewenangan WaGateway.id, WaGateway.id adalah layanan whatsapp API gateway, jika ingin dibuatkan atau dibantu terkait script ada biaya di luar biaya layanan WaGateway.id)</p>
+                <p>Hubungkan formulir Anda langsung ke WhatsApp. Kirim notifikasi instan setiap kali ada respon baru dari audiens Anda.</p>
+                <div class="card-icon">📄</div>
             </div>
 
             <div class="item-nomor">
                 <div class="angka-fitur">06</div>
                 <h4>Simple Grab Contact</h4>
-                <p>Dengan fitur ini, Anda bisa dengan mudah mengambil (grab) kontak yang ada di WhatsApp pribadi maupun grup melalui WaGateway.id.</p>
+                <p>Ambil semua data kontak dari grup WhatsApp Anda dalam hitungan detik untuk kebutuhan pemetaan target pasar.</p>
+                <div class="card-icon">🎯</div>
             </div>
-        </div>
-    </div>
+       
 </section>
     <section class="integration-section" id="integration">
         <div class="section-container">
@@ -1163,80 +1205,177 @@
         </div>
     </section>
 
-    <section class="fitur-section dark-mode" id="features">
-        <div class="section-container">
+<section class="wa-features-section" id="features">
+    <style>
+        .wa-features-section {
+            background-color: #FCF5EB; /* Warna krem khas WA */
+            padding: 100px 24px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #111B21;
+        }
+
+        .wa-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wa-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .wa-header h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        .wa-header p {
+            color: #3b4a54;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Grid System */
+        .wa-fitur-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card Style */
+        .wa-fitur-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 40px; /* Sudut membulat lebar khas WA */
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .wa-fitur-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Icon Emoji Style */
+        .wa-icon-emoji {
+            font-size: 40px;
+            margin-bottom: 25px;
+            background: #f0f2f5;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+
+        .wa-fitur-box h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #111B21;
+        }
+
+        .wa-fitur-box p {
+            color: #54656f;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .wa-header h2 { font-size: 2.5rem; }
+            .wa-features-section { padding: 60px 20px; }
+        }
+    </style>
+
+    <div class="wa-container">
+        <div class="wa-header">
             <h2 class="section-title">More Feature</h2>
-            <p style="text-align:center; color:var(--wa-text-inverted); margin:-30px auto 60px; max-width:600px;">Whacenter adalah tool berbasis web untuk Anda sebagai pebisnis online yang dapat membantu penjualan di bisnis Anda jadi jauh lebih efektif & efisien</p>
-            
-            <div class="fitur-grid">
-                <div class="fitur-box-white">
-                    <div class="fitur-icon-circle"><i class="fas fa-volume-up"></i></div>
-                    <h4>WA Broadcast</h4>
-                    <p>Fitur ini digunakan untuk mengirimkan Pesan WhatsApp secara massal dengan sangat mudah.</p>
-                </div>
-                <div class="fitur-box-white">
-                    <div class="fitur-icon-circle"><i class="fas fa-reply-all"></i></div>
-                    <h4>Smart AutoReply</h4>
-                    <p>Fitur ini digunakan untuk membalas pesan secara otomatis dengan keyword tertentu.</p>
-                </div>
-                <div class="fitur-box-white">
-                    <div class="fitur-icon-circle"><i class="fas fa-address-book"></i></div>
-                    <h4>Contact</h4>
-                    <p>Fitur ini digunakan untuk manajemen kontak bisa input satu - satu ataupun import via excel.</p>
-                </div>
-                <div class="fitur-box-white">
-                    <div class="fitur-icon-circle"><i class="fas fa-users-cog"></i></div>
-                    <h4>Management User</h4>
-                    <p>Fitur ini untuk management user. Management user pun di bagi 2 klasifikasi untuk end user dan agency.</p>
-                </div>
-                <div class="fitur-box-white">
-                    <div class="fitur-icon-circle"><i class="fas fa-mobile-alt"></i></div>
-                    <h4>Device</h4>
-                    <p>Fitur ini digunakan untuk mengelola device atau nomor dan sangat memungkinkan 1 akun bisa lebih dari 1 nomor whatsapp.</p>
-                </div>
-                <div class="fitur-box-white">
-                    <div class="fitur-icon-circle"><i class="fas fa-file-export"></i></div>
-                    <h4>Send Item Report</h4>
-                    <p>Fitur ini digunakan untuk memantau send item report seluruh pesan yang masuk dan keluar, gagal dan terkirim.</p>
-                </div>
-                <div class="fitur-box-white">
-    <div class="fitur-icon-circle"><i class="fas fa-laptop-code"></i></div>
-    <h4>Multi Platform</h4>
-    <p>Whacenter bisa di gunakan untuk beberapa os karena di bangun menggunakan web based.</p>
-</div>
-
-<div class="fitur-box-white">
-    <div class="fitur-icon-circle"><i class="fas fa-inbox"></i></div>
-    <h4>Inbox</h4>
-    <p>Fitur ini digunakan untuk managemen inbox, sehingga tiap pesan yang masuk di whatsapp kita bisa di remote dari aplikasi ini.</p>
-</div>
-
-<div class="fitur-box-white">
-    <div class="fitur-icon-circle"><i class="fas fa-user-friends"></i></div>
-    <h4>Single & Group Message</h4>
-    <p>Fitur ini digunakan untuk mengirimkan single message atau grup message bisa tanpa save kontak atau dari list kontak yang kita punya.</p>
-</div>
-
-<div class="fitur-box-white">
-    <div class="fitur-icon-circle"><i class="fas fa-terminal"></i></div>
-    <h4>Simple REST API</h4>
-    <p>Kami sudah sediakan untuk dokumentasi rest api guna untuk pengiriman pesan atau untuk di intgrasikan dengan aplikasi yang kita buat.</p>
-</div>
-
-<div class="fitur-box-white">
-    <div class="fitur-icon-circle"><i class="fas fa-file-alt"></i></div>
-    <h4>Terintegrasi Google Form</h4>
-    <p>Whacenter sudah terintegrasi dengan Google Froms sehingga Anda bisa dengan mudah dalam mengumpulkan list building atau mengirimkan informasi melalui WhatsApp.</p>
-</div>
-
-<div class="fitur-box-white">
-    <div class="fitur-icon-circle"><i class="fas fa-address-card"></i></div>
-    <h4>Simple Grab Contact</h4>
-    <p>Kami sudah sediakan untuk dokumentasi rest api guna untuk pengiriman pesan atau untuk di intgrasikan dengan aplikasi yang kita buat.</p>
-</div>
-            </div>
+            <p>Whacenter adalah tool berbasis web untuk Anda pebisnis online yang membantu penjualan jadi jauh lebih efektif & efisien.</p>
         </div>
-    </section>
+
+        <div class="wa-fitur-grid">
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">📢</div>
+                <h4>WA Broadcast</h4>
+                <p>Fitur ini digunakan untuk mengirimkan Pesan WhatsApp secara massal dengan sangat mudah.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">🤖</div>
+                <h4>Smart AutoReply</h4>
+                <p>Fitur ini digunakan untuk membalas pesan secara otomatis dengan keyword tertentu.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">📇</div>
+                <h4>Contact</h4>
+                <p>Fitur ini digunakan untuk manajemen kontak bisa input satu-satu ataupun import via excel.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">👥</div>
+                <h4>Management User</h4>
+                <p>Fitur untuk management user, dibagi menjadi 2 klasifikasi untuk end user dan agency.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">📱</div>
+                <h4>Device</h4>
+                <p>Kelola device atau nomor, sangat memungkinkan 1 akun memiliki lebih dari 1 nomor WhatsApp.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">📊</div>
+                <h4>Send Item Report</h4>
+                <p>Pantau laporan seluruh pesan masuk, keluar, gagal, dan terkirim secara real-time.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">🌐</div>
+                <h4>Multi Platform</h4>
+                <p>dapat digunakan di berbagai OS karena dibangun menggunakan sistem web-based.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">📥</div>
+                <h4>Inbox</h4>
+                <p>Manajemen inbox sehingga setiap pesan masuk bisa di-remote langsung dari aplikasi.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">💬</div>
+                <h4>Single & Group Message</h4>
+                <p>Kirim pesan ke personal atau grup tanpa save kontak atau dari list yang tersedia.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">🛠️</div>
+                <h4>Simple REST API</h4>
+                <p>Dokumentasi API lengkap untuk pengiriman pesan atau integrasi dengan aplikasi buatan Anda.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">📝</div>
+                <h4>Terintegrasi Google Form</h4>
+                <p>terintegrasi dengan Google Froms sehingga Anda bisa dengan mudah dalam mengumpulkan list building atau mengirimkan informasi melalui WhatsApp.</p>
+            </div>
+
+            <div class="wa-fitur-box">
+                <div class="wa-icon-emoji">🎯</div>
+                <h4>Simple Grab Contact</h4>
+                <p>Kami sudah sediakan untuk dokumentasi rest api guna untuk pengiriman pesan atau untuk di intgrasikan dengan aplikasi yang kita buat.</p>
+        </div>
+    </div>
+</section>
 
     <section class="pricing-section" id="pricing">
         <div class="section-container">
@@ -1399,11 +1538,11 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Bagaimana terkait script / appscript / atau code lainya ? <i class="fas fa-angle-down faq-icon"></i></div>
-                    <div class="faq-answer"><div class="faq-answer-content">Seperti disebutkan di bagian Integrasi, Whacenter menyediakan API gateway. Pengembangan script/kode khusus adalah di luar cakupan layanan standar, namun tim kami dapat membantu dengan biaya tambahan.</div></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Seperti disebutkan di bagian Integrasi, kami menyediakan API gateway. Pengembangan script/kode khusus adalah di luar cakupan layanan standar, namun tim kami dapat membantu dengan biaya tambahan.</div></div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Apakah Bisa kena banned ? <i class="fas fa-angle-down faq-icon"></i></div>
-                    <div class="faq-answer"><div class="faq-answer-content">Pemblokiran nomor (banned) adalah risiko yang melekat jika kebijakan anti-spam Whatsapp dilanggar. Whacenter membantu menyediakan API, namun cara penggunaan nomor tetap menjadi tanggung jawab pengguna. Kami menyediakan tips untuk meminimalkan risiko ini.</div></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Pemblokiran nomor (banned) adalah risiko yang melekat jika kebijakan anti-spam Whatsapp dilanggar. kamimembantu menyediakan API, namun cara penggunaan nomor tetap menjadi tanggung jawab pengguna. Kami menyediakan tips untuk meminimalkan risiko ini.</div></div>
                 </div>
             </div>
         </div>
@@ -1449,7 +1588,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© Copyright WaGateway.id. All Rights Reserved. Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>. Disesuaikan dengan Tema Warna WhatsApp.</p>
+            <p>© Copyright WaGateway.id. All Rights Reserved.  <a href="https://bootstrapmade.com/" target="_blank"></a></p>
         </div>
     </footer>
 
@@ -1489,4 +1628,4 @@
         });
     </script>
 </body>
-</html> ini kode awal
+</html> 
