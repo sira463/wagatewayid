@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAGATEWAY.ID | unOffcial Whatsapp Gateway Termurah</title>
-    <link rel="icon" href="https://static.whatsapp.net/rsrc.php/v3/yP/r/r_XwXm_z05r.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>WAGATEWAY.ID | unOfficial Whatsapp Gateway Termurah</title>
+    <meta name="description" content="Whatsapp API Gateway termurah, tercepat, dan paling andal untuk otomasi pesan bisnis Anda.">
+    <meta name="keywords" content="whatsapp, api, gateway, otomasi, bisnis, murah, wa gateway, wa api, whatsapp automation">
+    <meta name="theme-color" content="#25d366">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="WAGATEWAY.ID | unOfficial Whatsapp Gateway Termurah">
+    <meta property="og:description" content="Whatsapp API Gateway termurah, tercepat, dan paling andal untuk otomasi pesan bisnis Anda.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wagateway.id/">
+    <meta property="og:image" content="https://static.whatsapp.net/rsrc.php/v3/yP/r/r_XwXm_z05r.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WAGATEWAY.ID | unOfficial Whatsapp Gateway Termurah">
+    <meta name="twitter:description" content="Whatsapp API Gateway termurah, tercepat, dan paling andal untuk otomasi pesan bisnis Anda.">
+    <meta name="twitter:image" content="https://static.whatsapp.net/rsrc.php/v3/yP/r/r_XwXm_z05r.png">
+    <link rel="canonical" href="https://wagateway.id/">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="https://static.whatsapp.net/rsrc.php/v3/yP/r/r_XwXm_z05r.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -114,8 +129,6 @@
                 display: flex;
             }
         }
-            justify-content: space-between;
-        }
 
         .logo-whacenter {
             font-size: 24px;
@@ -144,7 +157,6 @@
                 padding: 16px 0 0 0;
                 border-top: 1px solid #f0f0f0;
             }
-        }
         }
 
         .nav-menu a {
@@ -811,6 +823,61 @@
     font-size: 14px;
     color: #666;
 }
+
+/* Tambahan untuk aksesibilitas dan performa */
+/* Hapus ruleset kosong yang error */
+
+/* Fokus ring untuk aksesibilitas */
+:focus {
+    outline: 2px solid #25d366 !important;
+    outline-offset: 2px;
+}
+
+/* Prefer reduced motion untuk aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Responsive images */
+img, picture, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Pastikan kontras tombol dan teks cukup */
+.btn-wa, .btn-primary-wa, .nav-menu-link {
+    color: #fff !important;
+    background-color: #25d366 !important;
+}
+
+.btn-wa:hover, .btn-primary-wa:hover {
+    background-color: #008069 !important;
+}
+
+/* Hamburger: lebih besar untuk tap target */
+.hamburger {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* Nav link tap target */
+.nav-menu a {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+}
+
+/* Hide outline only for mouse, not keyboard */
+:focus:not(:focus-visible) {
+    outline: none;
+}
     </style>
 </head>
 <body>
@@ -933,7 +1000,7 @@
     </div>
 </header>
 
-<section class="hero" id="home" style="
+<section class="hero" id="home" tabindex="-1" style="
     background-color: #fcf5eb; /* Warna Krem Pucat Background WA Resmi */
     padding: 80px 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -1327,7 +1394,7 @@
         </div>
     </section>
 
-<section class="wa-features-section" id="features">
+    <section class="wa-features-section" id="features">
     <style>
         .wa-features-section {
             background-color: #E2FFCD; /* Warna krem khas WA */
@@ -1575,7 +1642,7 @@
                     <div class="pricing-header">
                         <h3>Lite</h3>
                         <div class="pricing-price"><span>IDR</span> 430 rb <span>/ 1 tahun</span></div>
-                        <p class="pricing-period">Per <span class="wa-period-tag">1 tahun/span></p>
+                        <p class="pricing-period">Per <span class="wa-period-tag">1 tahun</span></p>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check-circle"></i> Unlimited Message</li>
@@ -1750,4 +1817,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
