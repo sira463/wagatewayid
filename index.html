@@ -58,6 +58,62 @@
             padding: 10px 20px;
             display: flex;
             align-items: center;
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: var(--wa-dark-green-accent);
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 900px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100vw;
+                width: 220px;
+                height: 100vh;
+                background: var(--wa-white);
+                flex-direction: column;
+                gap: 0;
+                padding: 80px 0 0 0;
+                box-shadow: -2px 0 12px rgba(0,0,0,0.07);
+                transition: right 0.3s;
+                z-index: 1050;
+            }
+            .nav-menu.open {
+                right: 0;
+            }
+            .nav-menu li {
+                margin: 0;
+                border-bottom: 1px solid #f0f0f0;
+                text-align: left;
+            }
+            .nav-menu a {
+                display: block;
+                padding: 18px 32px;
+                font-size: 16px;
+            }
+            .nav-cta {
+                display: none !important;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
             justify-content: space-between;
         }
 
@@ -76,6 +132,19 @@
             list-style: none;
             margin: 0;
             padding: 0;
+        }
+
+        .nav-cta-mobile {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .nav-cta-mobile {
+                display: block !important;
+                padding: 16px 0 0 0;
+                border-top: 1px solid #f0f0f0;
+            }
+        }
         }
 
         .nav-menu a {
@@ -762,6 +831,11 @@
         justify-content: space-between; 
         padding: 0 20px;
     ">
+        <div class="hamburger" id="hamburger-menu" aria-label="Buka menu navigasi" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
          <a href="#" class="logo-whacenter" style="
     text-decoration: none; 
     display: flex; 
@@ -776,7 +850,7 @@
             list-style: none; 
             margin: 0; 
             padding: 0;
-        ">
+        " id="main-nav-menu">
             <li><a href="#home" style="text-decoration: none; color: #111b21; font-size: 15px; font-weight: 500;">Home</a></li>
             <li><a href="#about" style="text-decoration: none; color: #111b21; font-size: 15px; font-weight: 500;">About Us</a></li>
             <li><a href="#features" style="text-decoration: none; color: #111b21; font-size: 15px; font-weight: 500;">Features</a></li>
@@ -784,6 +858,33 @@
             <li><a href="#pricing" style="text-decoration: none; color: #111b21; font-size: 15px; font-weight: 500;">Pricing</a></li>
             <li><a href="#order" style="text-decoration: none; color: #111b21; font-size: 15px; font-weight: 500;">Order</a></li>
             <li><a href="#docs" style="text-decoration: none; color: #111b21; font-size: 15px; font-weight: 500;">Docs</a></li>
+                    <li class="nav-cta-mobile">
+                        <a href="https://wa.me/6285369237896?text=Halo,%20saya%20ingin%20menghubungi%20customer%20service" class="nav-menu-link" target="_blank" style="
+                            text-decoration: none; 
+                            color: #111b21; 
+                            font-size: 15px; 
+                            font-weight: 500; 
+                            padding: 10px 20px; 
+                            border: 1px solid #111b21; 
+                            border-radius: 25px;
+                            margin: 0 16px 8px 16px;
+                            display: block;
+                            text-align: center;
+                        ">Contact Us</a>
+                        <a href="https://wa.me/6285369237896?text=Halo,%20saya%20butuh%20bantuan%20untuk%20Login" class="nav-menu-link" target="_blank" style="
+                            text-decoration: none; 
+                            background-color: #25d366; 
+                            color: white; 
+                            font-size: 15px; 
+                            font-weight: 600; 
+                            padding: 11px 28px; 
+                            border-radius: 25px;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                            margin: 0 16px 16px 16px;
+                            display: block;
+                            text-align: center;
+                        ">LOGIN</a>
+                    </li>
         </ul>
 
         <div class="nav-cta" style="display: flex; align-items: center; gap: 15px;">
@@ -809,6 +910,26 @@
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             ">LOGIN</a>
         </div>
+    </header>
+    <script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('main-nav-menu');
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('open');
+    });
+    // Optional: close menu when clicking outside or on a link (mobile UX)
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('open');
+            }
+            if (e.target.tagName === 'A' && navMenu.contains(e.target)) {
+                navMenu.classList.remove('open');
+            }
+        }
+    });
+    </script>
     </div>
 </header>
 
